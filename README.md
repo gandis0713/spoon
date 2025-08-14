@@ -1,2 +1,2 @@
-# tflite_inference
-TFLite Inference
+# Spoon
+TFLite Inference Library
