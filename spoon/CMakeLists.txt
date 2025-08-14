@@ -10,11 +10,20 @@ add_library(spoon
 )
 add_library(spoon::spoon ALIAS spoon)
 
+find_package(flatbuffers REQUIRED)
+find_package(spdlog REQUIRED)
+
 # Set target properties
 target_include_directories(spoon
   PUBLIC
     $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}>
     $<INSTALL_INTERFACE:include>
+)
+
+target_link_libraries(spoon
+  PRIVATE
+    flatbuffers::flatbuffers
+    spdlog::spdlog
 )
 
 install(TARGETS spoon
