@@ -1,0 +1,35 @@
+{
+  "name": "spoon",
+  "version-string": "0.0.1",
+  "dependencies": [
+    "gtest",
+    "glm",
+    "spdlog",
+    "sdl2",
+    "stb",
+    "tinyobjloader",
+    "tinygltf",
+    "ktx",
+    "imgui",
+    "vulkan-memory-allocator",
+    "flatbuffers",
+    {
+      "name": "angle",
+      "platform": "osx"
+    },
+    {
+      "name": "vcpkg-cmake",
+      "host": true
+    },
+    {
+      "name": "vcpkg-cmake-config",
+      "host": true
+    }
+  ],
+  "overrides": [
+    {
+      "name": "imgui",
+      "version": "1.91.6"
+    }
+  ]
+}

@@ -11,12 +11,6 @@
 *.gch
 *.pch
 
-# Linker files
-*.ilk
-
-# Debugger Files
-*.pdb
-
 # Compiled Dynamic libraries
 *.so
 *.dylib
@@ -37,5 +31,26 @@
 *.out
 *.app
 
-# debug information files
-*.dwo
+# log
+*.log
+
+# build
+build/
+
+# install
+install/
+
+# script
+!scripts/build
+
+# visual studio
+.vs/
+
+# vcpkg
+externals/
+
+# imgui
+imgui.ini
+
+# for mac
+.DS_Store
