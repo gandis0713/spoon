@@ -66,14 +66,17 @@ bool Model::loadFromBuffer(const void* buffer, size_t size)
 
 bool Model::validateTFLiteModel(const void* buffer, size_t size)
 {
+    // TFLite files start with a 4-byte length field, followed by "TFL3" magic number
+    // Check if we have enough data for the header
     if (size < 8)
     {
         return false;
     }
 
-    // Check TFLite magic number (first 4 bytes should be "TFL3")
-    const char* data = static_cast<const char*>(buffer);
-    if (data[0] != 'T' || data[1] != 'F' || data[2] != 'L' || data[3] != '3')
+    const uint8_t* data = static_cast<const uint8_t*>(buffer);
+    
+    // Check TFLite magic number at offset 4 (after the length field)
+    if (data[4] != 'T' || data[5] != 'F' || data[6] != 'L' || data[7] != '3')
     {
         return false;
     }
